@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        /* layout-1 */
+        div.card{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 200px 100px 200px;
+            grid-gap: 30px;
+            padding: 30px;
+            grid-template-areas: 
+            "h1 h2 h3 h3"
+            "h1 h2 h5 h6"
+            "h4 h4 h5 h6";
+        }
+        .card-item img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .card-item{
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .card-item:first-child{
+            grid-area: h1;
+        }
+        .card-item:nth-child(2){
+            grid-area: h2;
+        }
+        .card-item:nth-child(3){
+            grid-area: h3;
+        }
+        .card-item:nth-child(4){
+            grid-area: h4;
+        }
+        .card-item:nth-child(5){
+            grid-area: h5;
+        }
+        .card-item:last-child{
+            grid-area: h6;
+        }
+        /* layout-2 */
+        div.layout2{
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-gap: 30px;
+            padding: 30px;
+            grid-template-areas: 
+            "h1 h2 h3"
+            "h1 h4 h5";
+        }
+        .layout2-item img{
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .layout2-item{
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        .layout2-item:first-child{
+            grid-area: h1;
+        }
+        .layout2-item:nth-child(2){
+            grid-area: h2;
+        }
+        .layout2-item:nth-child(3){
+            grid-area: h3;
+        }
+        .layout2-item:nth-child(4){
+            grid-area: h4;
+        }
+        .layout2-item:last-child{
+            grid-area: h5;
+        }            
+        .layout2-item-history{
+            color: rgb(124, 124, 124);
+        }
+        .layout2-item img.img-big{
+            height: 100%;
+        }
+        .layout2-item-history{
+            position: absolute;
+            bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+    <h1>---layout 1</h1>
+    <div class="card">
+        <div class="card-item"><img src="https://images.pexels.com/photos/2356045/pexels-photo-2356045.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" /></div>
+        <div class="card-item"><img src="https://images.pexels.com/photos/3155666/pexels-photo-3155666.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" /></div>
+        <div class="card-item"><img src="https://images.pexels.com/photos/2901209/pexels-photo-2901209.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" /></div>
+        <div class="card-item"><img src="https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" /></div>
+        <div class="card-item"><img src="https://images.pexels.com/photos/2901215/pexels-photo-2901215.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" /></div>
+        <div class="card-item"><img src="https://images.pexels.com/photos/3935702/pexels-photo-3935702.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" /></div>
+    </div>
+    <h1>---layout 2</h1>
+    <div class="layout2">
+        <div class="layout2-item">
+            <img src="https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" class="img-big" />
+        </div>
+        <div class="layout2-item">
+            <img src="https://images.pexels.com/photos/7815424/pexels-photo-7815424.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" />
+            <div class="layout2-item-body">
+                <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti sint, voluptate odio dolorem numquam id quia, doloribus adipisci quo ducimus eius totam, animi vel tenetur deserunt illo.</h4>
+            </div>
+            <div class="layout2-item-history">1 month ago</div>
+        </div>
+        <div class="layout2-item">
+            <img src="https://images.pexels.com/photos/10012865/pexels-photo-10012865.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" />
+            <div class="layout2-item-body">
+                <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti sint, voluptate odio dolorem numquam id quia</h4>
+            </div>
+            <div class="layout2-item-history">6 month ago</div>
+        </div>
+        <div class="layout2-item">
+            <img src="https://images.pexels.com/photos/10012842/pexels-photo-10012842.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" />
+            <div class="layout2-item-body">
+                <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h4> 
+            </div>
+            <div class="layout2-item-history">1 year ago</div>
+        </div>
+        <div class="layout2-item">
+            <img src="https://images.pexels.com/photos/1402787/pexels-photo-1402787.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" />
+            <div class="layout2-item-body">
+                <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h4>
+            </div>
+            <div class="layout2-item-history">2 month ago</div>
+        </div>
+    </div>    
+</body>
+</html>
